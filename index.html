@@ -8,32 +8,55 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header"><h1>Calculate your Body Mass Index</h1></div>
+ <header class="h1"> 
+    <div class="img">
+    <img src="/BMI/img/bmii-removebg-preview.png" alt="">
     
-    <div class="container">
+</div>
+    <h2>BMI calculator</h2>
+</header>
+
+<div class="center">
+   
     <div class="left">
-        <div class="height-container">
-        <h1>height(m)</h1>
-            <input type="text" name="height1" id="height">
-        </div>
+        <div class="left-content1">
+            
+        <select class="height" name="" id="height">
+        <option value="centimeters">Centimeters</option>
+        <option value="meters">Meters</option>
+        <option value="inches">Inches</option>
+        <option value="feet">Feet</option>
+    </select>
+    <input type="text" placeholder="Height" name="" id="txt-height">
+    <select name="" id="weight">
+        <option value="kilograms">Kilograms</option>
+        <option value="pounds">Pounds</option>
+       
+    </select>
+    <input type="text" placeholder="Weight" name="" id="txt-weight">
+    <div class="btn">
+    <button class="btn-calculate" onclick="calculateBMI()">Calculate</button>
+    <button class="btn-reset" onclick="reset()">Reset</button>
+</div>
+    </div>
     </div>
     <div class="right">
-      
-        <div class="weight-container">
-        <h1>weight(kg)</h1>
-            <input type="text" name="weight1" id="weight">
-        </div>
+        <div class="right-content">
+        <div class="result-txt">
+        <span>Results</span>
+    </div>
+    <div class="result-message">
+        <div class="result">
+        <span id="BMI" class="message">Your BMI: </span>
+    </div>
+    
+    <div class="message-txt">
+    <span>Message: </span>
+</div>
+</div>
     </div>
 </div>
- <div class="calculate">
-       <button onclick="calculateBMI()" class="button1">Calculate </button>
-       <div class="bmi">
-    <label for="result">Your body mass index is</label>
-       <input type="text" name="result" disabled id="result">
-       <label for="status">You are </label>
-       <input type="text" name="status" disabled id="status">
-    </div>
-    </div>
+</div>
 </body>
 <script src="functionality.js">  </script>
 </html>
