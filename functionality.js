@@ -3,6 +3,7 @@ function calculateBMI(){
     var weightmetric = document.getElementById("weight").value
     var height = document.getElementById("txt-height").value;
     var weight = document.getElementById("txt-weight").value;
+    var category;
      //Height 
      if(weightmetric=="kilograms"){
         
@@ -55,6 +56,26 @@ function calculateBMI(){
 
       var result = bmi_result.toFixed(4);
    document.getElementById("BMI").innerHTML = "Your BMI: "+result;
+   if(result<18.5){
+      category = "underweight";
+      document.getElementById("cat-img").style.display = "flex";
+   }
+   else if(result<25){
+      category = "normal";
+      document.getElementById("m-icon").src = "./BMI/img/Untitled_design__1_-removebg-preview.png"
+      document.getElementById("cat-img").style.display = "flex";
+   }
+   else if(result<30){
+      category = "overweight";
+      document.getElementById("m-icon").src = "./BMI/img/Untitled_design__2_-removebg-preview.png";
+      document.getElementById("cat-img").style.display = "flex";
+   }
+   else{
+      category ="obese";
+      document.getElementById("m-icon").src = "./BMI/img/Untitled_design__3_-removebg-preview.png";
+      document.getElementById("cat-img").style.display = "flex";
+   }
+   document.getElementById("category").innerHTML = "Category: "+category;
 }
 function reset(){
    document.getElementById("height").selectedIndex = "0";
@@ -62,4 +83,6 @@ function reset(){
    document.getElementById("BMI").innerHTML = "Your BMI:";
    document.getElementById("txt-height").value = "";
    document.getElementById("txt-weight").value = "";
+   document.getElementById("category").innerHTML = "Category: ";
+   document.getElementById("cat-img").style.display = "none"
 }
